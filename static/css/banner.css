@@ -1,0 +1,16 @@
+.warning-banner {
+    background: rgba(255, 150, 0, 0.15);
+    border: 1px solid rgba(255, 150, 0, 0.5);
+    color: #ffaa00;
+    padding: 1rem;
+    border-radius: 12px;
+    margin-bottom: 2rem;
+    text-align: center;
+    backdrop-filter: blur(5px);
+    animation: fadeIn 0.5s ease-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+}

@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>GymAI Trainer</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/style.css') }}"
+    />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/banner.css') }}"
+    />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.0.1/socket.io.js"></script>
+    <script src="{{ url_for('static', filename='js/app.js') }}" defer></script>
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <div class="logo">GymAI</div>
+        <div class="status-badge" id="connection-status">Connecting...</div>
+      </header>
+
+      <div id="hardware-warning" class="warning-banner" style="display: none">
+        ⚠️ <strong>Hardware Unsupported</strong>: Running in Simulation Mode.
+        <br />
+        Your router (RichLink/ZTE) does not support CSI capture.
+      </div>
+
+      <main>
+        <div class="visualizer">
+          <canvas id="poseCanvas" width="640" height="480"></canvas>
+        </div>
+
+        <div class="feedback-panel">
+          <div class="metric-card">
+            <h3>Exercise</h3>
+            <div id="exercise-type">Loading...</div>
+          </div>
+          <div class="metric-card">
+            <h3>Reps</h3>
+            <div
+              id="rep-count"
+              class="status-text"
+              style="color: #00ff00; font-size: 3rem"
+            >
+              0
+            </div>
+          </div>
+          <div class="metric-card">
+            <h3>Status</h3>
+            <div id="feedback-text" class="status-text">Waiting...</div>
+          </div>
+        </div>
+      </main>
+    </div>
+  </body>
+</html>

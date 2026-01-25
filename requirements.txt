@@ -1,0 +1,6 @@
+numpy
+pyttsx3
+flask
+flask-socketio
+eventlet
+requests
